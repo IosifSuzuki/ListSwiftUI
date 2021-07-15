@@ -40,8 +40,11 @@ struct ContentView: View {
                             NavigationLink(
                                 destination: Text(locationItem.name),
                                 label: {
-                                    Text(locationItem.name)
-                                        .font(.title3)
+                                    HighlightText(
+                                        highlightText: viewModel.filteredText,
+                                        text: locationItem.name
+                                    )
+                                    .font(.title3)
                                 }
                             )
                             .frame(height: rowHeight)
